@@ -1,3 +1,6 @@
+<script lang="ts" setup></script>
 <template>
-	<p>This is a footer</p>
+	<UFooter>
+		<template #left>This is a footer</template>
+	</UFooter>
 </template>

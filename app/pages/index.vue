@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<UContainer>
 		<p>This is a body</p>
-	</div>
+	</UContainer>
 </template>

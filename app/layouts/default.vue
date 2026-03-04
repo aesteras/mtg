@@ -4,9 +4,11 @@ import AppFooter from "~/components/AppFooter.vue";
 </script>
 
 <template>
-	<div>
+	<UApp>
 		<AppHeader />
-		<slot />
+		<UMain>
+			<slot />
+		</UMain>
 		<AppFooter />
-	</div>
+	</UApp>
 </template>
