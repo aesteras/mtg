@@ -1,11 +1,12 @@
 <script setup lang="ts">
-const {deck} = defineProps<{deck: DeckStatsCollectionItem}>();
+import type { DeckStats } from "~~/schema/deckStatsSchema";
+
+const { deckStats } = defineProps<{ deckStats: DeckStats }>();
 </script>
 
 <template>
-		<p>{{deck.archidektId}}</p>
-		<p>{{deck.deckName}}</p>
-		<p>{{deck.image}}</p>
-		<p>{{deck.colors}}</p>
-		<p>--</p>
+	<p>{{ deckStats.archidektId }}</p>
+	<p>{{ deckStats.deckName }}</p>
+	<p>{{ deckStats.image }}</p>
+	<p>{{ deckStats.colors }}</p>
 </template>

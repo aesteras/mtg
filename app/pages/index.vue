@@ -11,11 +11,8 @@ console.log({ deckStats });
 		<p>This is a body</p>
 		<div v-if="deckStats == undefined">Undefined</div>
 		<div v-else>
-			<div v-for="item in deckStats">
-				<p>{{item.archidektId}}</p>
-				<p>{{item.deckName}}</p>
-				<p>{{item.image}}</p>
-				<p>{{item.colors}}</p>
+			<div v-for="item in deckStats" :key="item.id">
+				<DeckCard :deck-stats="item" />
 				<p>--</p>
 			</div>
 		</div>

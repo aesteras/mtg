@@ -1,29 +1,21 @@
 import { defineCollection, defineContentConfig } from "@nuxt/content";
-import { z } from "zod";
+import { deckStatsSchema } from "./schema/deckStatsSchema";
+import { deckResultsSchema } from "./schema/deckResultsSchema";
 
 export default defineContentConfig({
 	collections: {
-		// Decks Stats
+		// Deck Stats
 		deckStats: defineCollection({
 			type: "data",
 			source: "decks/**/*.json",
-			schema: z
-				.object({
-					archidektId: z.int(),
-					deckName: z.string(),
-					image: z.string(),
-					colors: z.regex(/^[wubrg]+$/),
-				}),
+			schema: deckStatsSchema,
 		}),
 
-		// Decks Results
+		// Deck Results
 		deckResults: defineCollection({
 			type: "data",
 			source: "decks/**/*.csv",
-			schema: z.object({
-				date: z.iso.date(),
-				result: z.regex(/^[lw]+$/),
-			}),
+			schema: deckResultsSchema,
 		}),
 	},
 });
