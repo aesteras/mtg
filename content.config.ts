@@ -3,8 +3,8 @@ import { z } from "zod";
 
 export default defineContentConfig({
 	collections: {
-		// Decks Info
-		decksInfo: defineCollection({
+		// Decks Stats
+		deckStats: defineCollection({
 			type: "data",
 			source: "decks/**/*.json",
 			schema: z
@@ -12,17 +12,17 @@ export default defineContentConfig({
 					archidektId: z.int(),
 					deckName: z.string(),
 					image: z.string(),
-					colors: z.string(),
+					colors: z.regex(/^[wubrg]+$/),
 				}),
 		}),
 
 		// Decks Results
-		decksResults: defineCollection({
+		deckResults: defineCollection({
 			type: "data",
 			source: "decks/**/*.csv",
 			schema: z.object({
 				date: z.iso.date(),
-				result: z.regex(/^[LWlw]+$/),
+				result: z.regex(/^[lw]+$/),
 			}),
 		}),
 	},
