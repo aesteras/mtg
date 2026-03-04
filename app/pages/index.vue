@@ -2,8 +2,6 @@
 const { data: deckStats } = await useAsyncData("deckStats", () => {
 	return queryCollection("deckStats").order("deckName", "ASC").all();
 });
-
-console.log({ deckStats });
 </script>
 
 <template>
