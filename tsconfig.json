@@ -1,6 +1,8 @@
 {
 	// https://nuxt.com/docs/guide/concepts/typescript
 	"compilerOptions": {
+		"target": "es2022",
+		"module": "es2022",
 		"strict": true,
 		"esModuleInterop": true,
 		"moduleResolution": "Node",
