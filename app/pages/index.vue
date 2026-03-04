@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-const { data: decksInfo } = await useAsyncData("authors", () => {
-	return queryCollection("decksInfo").order("name", "DESC").all();
+const { data: decksInfo } = await useAsyncData("decksInfo", () => {
+	return queryCollection("decksInfo").order("deckName", "ASC").all();
 });
 
 console.log({ decksInfo });
