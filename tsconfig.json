@@ -3,7 +3,10 @@
 	"compilerOptions": {
 		"strict": true,
 		"esModuleInterop": true,
-		"moduleResolution": "Node"
+		"moduleResolution": "Node",
+		"paths": {
+			"~/*": ["./app/*"]
+		}
 	},
 	"references": [
 		{
