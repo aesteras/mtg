@@ -25,5 +25,8 @@
 		"globals": "^17.3.0",
 		"prettier": "3.8.1",
 		"typescript-eslint": "^8.56.1"
+	},
+	"overrides": {
+		"serialize-javascript": "^7.0.4"
 	}
 }
