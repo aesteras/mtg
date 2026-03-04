@@ -9,15 +9,11 @@ export default defineContentConfig({
 			source: "decks/**/*.json",
 			schema: z
 				.object({
-					id: z.int(),
+					archidektId: z.int(),
 					deckName: z.string(),
 					image: z.string(),
 					colors: z.string(),
-				})
-				.transform((deck) => ({
-					...deck,
-					archidektUrl: `https://archidekt.com/decks/${deck.id}`,
-				})),
+				}),
 		}),
 
 		// Decks Results
