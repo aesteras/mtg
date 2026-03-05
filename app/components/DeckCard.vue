@@ -32,7 +32,7 @@ const card = {
 			<img
 				:src="data.image"
 				alt="Deck Image"
-				class="h-48 w-96 object-cover  overflow-hidden rounded-lg"
+				class="h-48 w-96 object-cover overflow-hidden rounded-lg"
 			>
 		</template>
 		<template #footer>
