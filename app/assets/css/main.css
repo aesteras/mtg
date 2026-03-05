@@ -3,8 +3,13 @@
 
 :root {
 	--ui-primary: orange;
+	--ui-secondary: purple;
 }
 
 .dark {
 	--ui-bg: #1a1a1a;
+	--ui-bg-muted: #232323;
+	--ui-bg-elevated: #232323;
+	--ui-bg-accented: #383838;
+	--ui-bg-inverted: #e3e3e3;
 }

@@ -16,21 +16,28 @@ const totalPlayed = totalLosses + totalWins;
 
 const card = {
 	title: data.deckName,
-	description: `colors: ${data.colors}, wins: ${totalWins}, losses: ${totalLosses}, played: ${totalPlayed}`,
+	description: `${totalPlayed} game${totalPlayed > 1 ? "s" : ""} played`,
 	to: `https://archidekt.com/decks/${data.archidektId}`,
 	orientation: "vertical",
 	reverse: true,
 	spotlight: true,
 	spotlightColor: "primary",
+	variant: "subtle",
 } as const;
 </script>
 
 <template>
 	<UPageCard v-bind="card">
-		<img
-			:src="data.image"
-			alt="Deck Image"
-			class="h-48 w-96 object-cover object-[0%_25%] overflow-hidden rounded-lg"
-		/>
+		<template #header>
+			<img
+				:src="data.image"
+				alt="Deck Image"
+				class="h-48 w-96 object-cover object-[0%_25%] overflow-hidden rounded-lg"
+			/>
+		</template>
+		<template #footer>
+			<DeckColors :colors="data.colors" />
+			<DeckWinRate :totalWins="totalWins" :totalLosses="totalLosses" />
+		</template>
 	</UPageCard>
 </template>
