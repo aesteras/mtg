@@ -19,7 +19,7 @@ console.log({ wonStyle, lostStyle });
 
 <template>
 	<div class="pt-4">
-		<p class="text-center text-sm">
+		<p class="text-center text-sm text-muted">
 			Won: {{ totalWins }} / Lost: {{ totalLosses }}
 		</p>
 		<div

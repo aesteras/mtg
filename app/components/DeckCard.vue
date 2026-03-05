@@ -16,7 +16,7 @@ const totalPlayed = totalLosses + totalWins;
 
 const card = {
 	title: data.deckName,
-	description: `${totalPlayed} game${totalPlayed > 1 ? "s" : ""} played`,
+	description: `${totalPlayed} game${totalPlayed !== 1 ? "s" : ""} played`,
 	to: `https://archidekt.com/decks/${data.archidektId}`,
 	orientation: "vertical",
 	reverse: true,
