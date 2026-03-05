@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { useDeckData } from "~/composables/deckData";
+import { useDeckData } from "~/composables/useDeckData";
 
 const deckData = useDeckData();
+deckData.value = deckData.value.sort(
+	(first, second) => first.totalPlayed - second.totalPlayed
+);
 </script>
 
 <template>
