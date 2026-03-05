@@ -27,7 +27,7 @@ const card = {
 </script>
 
 <template>
-	<UPageCard v-bind="card" :ui="{footer: 'w-full'}">
+	<UPageCard v-bind="card" :ui="{ footer: 'w-full' }">
 		<template #header>
 			<img
 				:src="data.image"
@@ -35,9 +35,13 @@ const card = {
 				class="h-48 w-96 object-cover object-[0%_25%] overflow-hidden rounded-lg"
 			/>
 		</template>
-		<template #footer style="width: 100%;">
+		<template #footer>
 			<DeckColors :colors="data.colors" />
-			<DeckWinRate :totalWins="totalWins" :totalLosses="totalLosses" :totalPlayed="totalPlayed" />
+			<DeckWinRate
+				:total-wins="totalWins"
+				:total-losses="totalLosses"
+				:total-played="totalPlayed"
+			/>
 		</template>
 	</UPageCard>
 </template>
