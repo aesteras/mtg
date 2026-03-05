@@ -1,8 +1,8 @@
-<script lang="ts" setup></script>
 <template>
 	<UHeader>
 		<template #title>
-			<h1>This is a header</h1>
+			<img src="/logo.svg" alt="logo" class="h-8 w-auto" >
+			<h1>Deck Tracker</h1>
 		</template>
 		<template #right>
 			<UColorModeButton style="cursor: pointer" />

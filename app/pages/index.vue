@@ -42,7 +42,7 @@ await callOnce(async () => {
 
 <template>
 	<UContainer>
-		<br />
+		<br >
 		<div v-if="deckData == undefined">Undefined</div>
 		<div v-else>
 			<DeckGrid />
