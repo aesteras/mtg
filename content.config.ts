@@ -1,14 +1,14 @@
 import { defineCollection, defineContentConfig } from "@nuxt/content";
-import { deckStatsSchema } from "./schema/deckStatsSchema";
+import { deckInfoSchema } from "./schema/deckInfoSchema";
 import { deckResultsSchema } from "./schema/deckResultsSchema";
 
 export default defineContentConfig({
 	collections: {
 		// Deck Stats
-		deckStats: defineCollection({
+		deckInfo: defineCollection({
 			type: "data",
 			source: "decks/**/*.json",
-			schema: deckStatsSchema,
+			schema: deckInfoSchema,
 		}),
 
 		// Deck Results
