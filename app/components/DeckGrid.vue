@@ -42,7 +42,7 @@ sortDecks("Total Played");
 		<USwitch v-model="reverse" label="Reversed" />
 	</div>
 	<UPageGrid class="pt-4">
-		<div v-for="(data, index) in deckData" :key="index">
+		<div v-for="data in deckData" :key="data.id">
 			<DeckCard :data="data" />
 		</div>
 	</UPageGrid>
