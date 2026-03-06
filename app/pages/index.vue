@@ -7,14 +7,14 @@ const { data: deckInfo } = await useAsyncData(
 	() => {
 		return queryCollection("deckInfo").all();
 	},
-	{ server: false }
+	{ server: true }
 );
 const { data: deckResults } = await useAsyncData(
 	"deckResults",
 	() => {
 		return queryCollection("deckResults").all();
 	},
-	{ server: false }
+	{ server: true }
 );
 
 // TODO delete
