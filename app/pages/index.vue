@@ -27,7 +27,7 @@ if (deckInfo.value && deckResults.value)
 <template>
 	<UContainer>
 		<br />
-		<div v-if="deckData == undefined">Undefined</div>
+		<div v-if="deckData">No data</div>
 		<div v-else>
 			<DeckGrid />
 		</div>
