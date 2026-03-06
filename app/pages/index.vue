@@ -26,8 +26,8 @@ if (deckInfo.value && deckResults.value)
 
 <template>
 	<UContainer>
-		<br />
-		<div v-if="deckData">No data</div>
+		<br >
+		<div v-if="deckData.length == 0">No data</div>
 		<div v-else>
 			<DeckGrid />
 		</div>
