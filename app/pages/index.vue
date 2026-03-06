@@ -2,12 +2,20 @@
 import { useDeckData } from "~/composables/useDeckData";
 
 // Fetch data
-const { data: deckInfo } = await useAsyncData("deckInfo", () => {
-	return queryCollection("deckInfo").all();
-});
-const { data: deckResults } = await useAsyncData("deckResults", () => {
-	return queryCollection("deckResults").all();
-});
+const { data: deckInfo } = await useAsyncData(
+	"deckInfo",
+	() => {
+		return queryCollection("deckInfo").all();
+	},
+	{ server: true }
+);
+const { data: deckResults } = await useAsyncData(
+	"deckResults",
+	() => {
+		return queryCollection("deckResults").all();
+	},
+	{ server: true }
+);
 
 // TODO delete
 console.log("deckInfo.value, deckResults.value:");
@@ -25,12 +33,10 @@ if (deckInfo.value && deckResults.value)
 </script>
 
 <template>
-	<ClientOnly>
-		<UContainer class="pt-4">
-			<div v-if="deckData.length == 0">No data</div>
-			<div v-else>
-				<DeckGrid />
-			</div>
-		</UContainer>
-	</ClientOnly>
+	<UContainer class="pt-4">
+		<div v-if="deckData.length == 0">No data</div>
+		<div v-else>
+			<DeckGrid />
+		</div>
+	</UContainer>
 </template>
