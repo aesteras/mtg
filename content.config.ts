@@ -7,14 +7,14 @@ export default defineContentConfig({
 		// Deck Stats
 		deckInfo: defineCollection({
 			type: "data",
-			source: "decks/**/*.json",
+			source: "decks/**/info.json",
 			schema: deckInfoSchema,
 		}),
 
 		// Deck Results
 		deckResults: defineCollection({
 			type: "data",
-			source: "decks/**/*.csv",
+			source: "decks/**/results.csv",
 			schema: deckResultsSchema,
 		}),
 	},

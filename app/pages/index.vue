@@ -3,7 +3,7 @@ import { useDeckData } from "~/composables/useDeckData";
 
 // Fetch data
 const { data: deckInfo } = await useAsyncData("deckInfo", () => {
-	return queryCollection("deckInfo").order("deckName", "ASC").all();
+	return queryCollection("deckInfo").all();
 });
 const { data: deckResults } = await useAsyncData("deckResults", () => {
 	return queryCollection("deckResults").all();
@@ -19,9 +19,8 @@ if (deckInfo.value && deckResults.value)
 </script>
 
 <template>
-	<UContainer>
-		<br >
-		<div v-if="deckData == undefined">Undefined</div>
+	<UContainer class="pt-4">
+		<div v-if="deckData.length == 0">No data</div>
 		<div v-else>
 			<DeckGrid />
 		</div>
