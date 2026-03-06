@@ -10,6 +10,7 @@ const { data: deckResults } = await useAsyncData("deckResults", () => {
 });
 
 // TODO delete
+console.log("deckInfo.value, deckResults.value:");
 console.log(deckInfo.value);
 console.log(deckResults.value);
 // TODO end
