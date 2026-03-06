@@ -10,8 +10,8 @@ const { data: deckResults } = await useAsyncData("deckResults", () => {
 });
 
 // TODO delete
-console.log(deckInfo.value?.[0]);
-console.log(deckResults.value?.[0]);
+console.log(deckInfo.value);
+console.log(deckResults.value);
 // TODO end
 
 // Initialize state
