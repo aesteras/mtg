@@ -2,20 +2,12 @@
 import { useDeckData } from "~/composables/useDeckData";
 
 // Fetch data
-const { data: deckInfo } = await useAsyncData(
-	"deckInfo",
-	() => {
-		return queryCollection("deckInfo").all();
-	},
-	{ server: true }
-);
-const { data: deckResults } = await useAsyncData(
-	"deckResults",
-	() => {
-		return queryCollection("deckResults").all();
-	},
-	{ server: true }
-);
+const { data: deckInfo } = await useAsyncData("deckInfo", () => {
+	return queryCollection("deckInfo").all();
+});
+const { data: deckResults } = await useAsyncData("deckResults", () => {
+	return queryCollection("deckResults").all();
+});
 
 // Initialize state
 const deckData = useDeckData();
