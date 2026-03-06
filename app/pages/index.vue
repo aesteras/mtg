@@ -17,12 +17,6 @@ const { data: deckResults } = await useAsyncData(
 	{ server: true }
 );
 
-// TODO delete
-console.log("deckInfo.value, deckResults.value:");
-console.log(deckInfo.value);
-console.log(deckResults.value);
-// TODO end
-
 // Initialize state
 const deckData = useDeckData();
 if (deckInfo.value && deckResults.value)
