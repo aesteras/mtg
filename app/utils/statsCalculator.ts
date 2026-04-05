@@ -14,7 +14,7 @@ const calculateWinLoss = (results: DeckResults["body"]) => {
 		.reduce((acc, cur) => acc + cur, 0);
 
 	const totalWins = results
-		.map(({ result }) => result.replace("l", "").length)
+		.map(({ result }) => result.replaceAll("l", "").length)
 		.reduce((acc, cur) => acc + cur, 0);
 
 	const totalLosses = totalPlayed - totalWins;
