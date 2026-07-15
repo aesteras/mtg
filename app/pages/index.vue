@@ -1,22 +1,7 @@
 <script lang="ts" setup>
 import { useDecksData } from "~/composables/useDecksData";
 
-const { data, error } = await useAsyncData("deckData", async () => {
-	const [deckInfo, deckResults] = await Promise.all([
-		queryCollection("deckInfo").all(),
-		queryCollection("deckResults").all(),
-	]);
-
-	return calculateStats({
-		deckInfo,
-		deckResults,
-	});
-});
-
-if (!data.value) throw error;
-
-const decksData = useDecksData();
-decksData.value = data.value;
+const decksData = await useDecksData();
 </script>
 
 <template>
