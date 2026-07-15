@@ -1,26 +1,27 @@
 <script lang="ts" setup>
-import { useDeckData } from "~/composables/useDeckData";
+import { useDecksData } from "~/composables/useDecksData";
 
-// Fetch data
-const { data: deckInfo } = await useAsyncData("deckInfo", () => {
-	return queryCollection("deckInfo").all();
-});
-const { data: deckResults } = await useAsyncData("deckResults", () => {
-	return queryCollection("deckResults").all();
-});
+const { data, error } = await useAsyncData("deckData", async () => {
+	const [deckInfo, deckResults] = await Promise.all([
+		queryCollection("deckInfo").all(),
+		queryCollection("deckResults").all(),
+	]);
 
-// Initialize state
-const deckData = useDeckData();
-if (deckInfo.value && deckResults.value)
-	deckData.value = calculateStats({
-		deckInfo: deckInfo.value,
-		deckResults: deckResults.value,
+	return calculateStats({
+		deckInfo,
+		deckResults,
 	});
+});
+
+if (!data.value) throw error;
+
+const decksData = useDecksData();
+decksData.value = data.value;
 </script>
 
 <template>
 	<UContainer class="pt-4">
-		<div v-if="deckData.length == 0">No data</div>
+		<div v-if="decksData.length == 0">No data</div>
 		<div v-else>
 			<DeckGrid />
 		</div>

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { useDeckData } from "~/composables/useDeckData";
+import { useDecksData } from "~/composables/useDecksData";
 import type { DeckData } from "~~/types/deckData";
 
-const deckData = useDeckData();
+const deckData = useDecksData();
 
 const sortFieldMap: Record<string, keyof DeckData> = {
 	"Total Played": "totalPlayed",
