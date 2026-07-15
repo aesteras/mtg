@@ -1,4 +1,5 @@
 import type { DeckData } from "~~/types/deckData";
+import { calculateStats } from "~/utils/calculateStats";
 
 export async function useDecksData() {
 	const state = useState<DeckData[]>("decksData", () => []);
