@@ -5,14 +5,13 @@ import type { DeckData } from "~~/types/deckData";
 const deckData = useDecksData();
 
 const sortFieldMap: Record<string, keyof DeckData> = {
-	"Total Played": "totalPlayed",
-	"Total Wins": "totalWins",
-	"Total Losses": "totalLosses",
-	"Won Percentage": "wonPercentage",
-	"Lost Percentage": "lostPercentage",
+	"Games Played": "totalPlayed",
+	"Games Won": "totalWins",
+	"Games Lost": "totalLosses",
+	"Win/Loss Ratio": "wonPercentage",
 } as const;
 const sortItems = ref(Object.keys(sortFieldMap));
-const sortValue = ref("Total Played");
+const sortValue = ref("Games Played");
 const reverse = ref(false);
 
 const sortDecks = (
@@ -32,7 +31,7 @@ const sortDecks = (
 watch([sortValue, reverse], () => sortDecks(sortValue.value, reverse.value));
 
 // Initial sort
-sortDecks("Total Played");
+sortDecks("Games Played");
 </script>
 
 <template>
