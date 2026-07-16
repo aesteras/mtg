@@ -32,7 +32,7 @@ defineProps<{
 		/>
 
 		<UContainer class="relative h-full flex items-end pb-8">
-			<h1 class="text-4xl font-bold text-white">
+			<h1 class="text-4xl font-bold">
 				{{ title }}
 			</h1>
 		</UContainer>
