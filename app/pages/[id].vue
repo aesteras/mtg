@@ -24,7 +24,6 @@ const deckData = decksData.value.find(
 			<p>totalLosses: {{ deckData.totalLosses }}</p>
 			<p>totalPlayed: {{ deckData.totalPlayed }}</p>
 			<p>wonPercentage: {{ deckData.wonPercentage }}</p>
-			<p>lostPercentage: {{ deckData.lostPercentage }}</p>
 		</UContainer>
 	</div>
 </template>

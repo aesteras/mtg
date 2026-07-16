@@ -25,7 +25,7 @@ defineProps<{
 				'lg:w-[66%]',
 				'hero-mask',
 			]"
-		>
+		/>
 
 		<div
 			class="absolute inset-0 bg-black/30 lg:left-auto lg:right-0 lg:w-[66%] hero-mask"

@@ -24,7 +24,7 @@ const card = {
 				:src="data.image"
 				alt="Deck Image"
 				class="h-48 w-96 object-cover overflow-hidden rounded-lg"
-			>
+			/>
 		</template>
 		<template #footer>
 			<DeckColors :colors="data.colors" />
