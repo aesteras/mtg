@@ -9,13 +9,7 @@
   - Ensure the chart communicates progression over time rather than cumulative performance.
   - Tooltip should display session date, wins, losses, total games and win percentage for the selected session.
 
-- Usage
-  - Create a "Usage over time" section.
-  - Display a bar chart with the X axis representing play session date and the Y axis representing total games played during that session.
-  - One bar should represent one recorded session.
-  - The purpose of the chart is to visualize how frequently the deck has been played over time.
-  - Tooltip should display session date and total games played.
-  - Preserve chronological order and allow gaps in activity to be clearly visible.
+- Activity (Done)
 
 - Insights
   - Create an "Insights" section containing derived metrics rather than raw statistics.

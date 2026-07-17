@@ -3,7 +3,7 @@ export default defineNuxtConfig({
 	typescript: {
 		strict: true,
 	},
-	modules: ["@nuxt/ui", "@nuxt/content", "@nuxt/eslint"],
+	modules: ["@nuxt/ui", "@nuxt/content", "@nuxt/eslint", "nuxt-charts"],
 	css: ["~/assets/css/main.css"],
 	compatibilityDate: "2025-07-15",
 	devtools: { enabled: true },
