@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useDecksData } from "~/composables/useDecksData";
 import HeroHeader from "~/components/details/HeroHeader.vue";
-import UsageHistogram from "~/components/details/UsageHistogram.vue";
+import ActivityHistogram from "~/components/details/ActivityHistogram.vue";
+import HistoryTable from "~/components/details/HistoryTable.vue";
 
 const { params } = useRoute();
 const decksData = await useDecksData();
@@ -22,9 +23,8 @@ const archidektUrl = `https://archidekt.com/decks/${deckData.archidektId}`;
 			:archidekt-url="archidektUrl"
 		/>
 		<UContainer>
-			<UsageHistogram :results="deckData.results" />
-			<!--placeholder data-->
-			<p>results: {{ deckData.results }}</p>
+			<ActivityHistogram :results="deckData.results" />
+			<HistoryTable :results="deckData.results" />
 		</UContainer>
 	</div>
 </template>
