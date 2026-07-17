@@ -2,6 +2,7 @@
 defineProps<{
 	title: string;
 	image: string;
+	archidektUrl: string;
 }>();
 </script>
 
@@ -31,10 +32,13 @@ defineProps<{
 			class="absolute inset-0 bg-black/30 lg:left-auto lg:right-0 lg:w-[66%] hero-mask"
 		/>
 
-		<UContainer class="relative h-full flex items-end pb-8">
+		<UContainer
+			class="relative h-full flex flex-col items-start justify-end pb-8"
+		>
 			<h1 class="text-4xl font-bold">
 				{{ title }}
 			</h1>
+			<ULink :to="archidektUrl" class="text-primary">Archidekt</ULink>
 		</UContainer>
 	</header>
 </template>

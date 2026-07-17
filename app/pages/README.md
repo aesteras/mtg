@@ -28,13 +28,6 @@
     - Compute the maximum number of consecutive losses achieved by the deck.
     - Display the streak length as the record.
 
-  - Include an "Activity calendar".
-    - Display a GitHub-style contribution calendar.
-    - Each recorded play session should contribute intensity based on the number of games played that day.
-    - Empty days should remain visible.
-    - Allow users to quickly identify periods of heavy use and inactivity.
-    - Tooltip should display date and games played.
-
   - Include a "Milestones" timeline.
     - Display milestones chronologically.
     - Include milestones for total games played at multiples of 10 (10, 20, 30, ...).
