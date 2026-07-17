@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { DeckData } from "~~/types/deckData";
+import DeckColors from "~/components/overview/DeckColors.vue";
+import DeckWinRate from "~/components/overview/DeckWinRate.vue";
 
 const { data } = defineProps<{
 	data: DeckData;

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useDecksData } from "~/composables/useDecksData";
+import HeroHeader from "~/components/details/HeroHeader.vue";
 
 const { params } = useRoute();
 const decksData = await useDecksData();
