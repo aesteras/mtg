@@ -10,7 +10,7 @@ const { data } = defineProps<{
 const card = {
 	title: data.deckName,
 	description: `${data.totalPlayed} game${data.totalPlayed !== 1 ? "s" : ""} played`,
-	to: `https://archidekt.com/decks/${data.archidektId}`,
+	to: `/decks/${data.archidektId}`,
 	orientation: "vertical",
 	reverse: true,
 	spotlight: true,
