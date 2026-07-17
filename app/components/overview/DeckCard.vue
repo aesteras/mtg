@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { DeckData } from "~~/types/deckData";
+import DeckColors from "~/components/overview/DeckColors.vue";
+import DeckWinRate from "~/components/overview/DeckWinRate.vue";
 
 const { data } = defineProps<{
 	data: DeckData;
@@ -8,7 +10,7 @@ const { data } = defineProps<{
 const card = {
 	title: data.deckName,
 	description: `${data.totalPlayed} game${data.totalPlayed !== 1 ? "s" : ""} played`,
-	to: `https://archidekt.com/decks/${data.archidektId}`,
+	to: `/decks/${data.archidektId}`,
 	orientation: "vertical",
 	reverse: true,
 	spotlight: true,
@@ -24,7 +26,7 @@ const card = {
 				:src="data.image"
 				alt="Deck Image"
 				class="h-48 w-96 object-cover overflow-hidden rounded-lg"
-			>
+			/>
 		</template>
 		<template #footer>
 			<DeckColors :colors="data.colors" />
