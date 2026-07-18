@@ -10,7 +10,7 @@ const insights = computed(() => buildColorInsights(decksData.value));
 
 <template>
 	<UContainer class="py-8">
-		<UPageHeader title="Deck insights">
+		<UPageHeader title="Deck insights" class="border-0">
 			<template #description>
 				Color distribution and average deck win rates across your collection.
 			</template>

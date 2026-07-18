@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
 	<section>
-		<UPageHeader>
+		<UPageHeader class="border-0">
 			<h2 class="text-xl font-semibold">Average win rate by color</h2>
 			<p class="text-muted">
 				Average win rate of decks that include each color.
