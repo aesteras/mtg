@@ -47,12 +47,12 @@ const tooltipTriggers = {
 			:group-padding="0"
 			:bar-padding="0.2"
 		/>
-		<VisAxis type="x" :tick-format="xFormatter" :num-ticks="5" />
+		<VisAxis type="x" :tick-format="xFormatter" :grid-line="false" />
 		<VisAxis
 			type="y"
 			:tick-format="yFormatter"
 			:num-ticks="yNumTicks"
-			:grid-line="true"
+			:grid-line="false"
 		/>
 	</VisXYContainer>
 </template>
