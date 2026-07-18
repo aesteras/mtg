@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { MtgColor } from "~~/types/colorInsights";
+import { MTG_COLOR_DETAILS, type MtgColor } from "~~/types/colorInsights";
 
 const props = defineProps<{
 	color: MtgColor;
@@ -8,20 +8,12 @@ const props = defineProps<{
 	winRate: number;
 }>();
 
-const colorValues: Record<MtgColor, string> = {
-	w: "#E8E4C9",
-	u: "#0E68AB",
-	b: "#6B5B5B",
-	r: "#D3202A",
-	g: "#00733E",
-};
-
 const chartData = computed(() => [props.winRate, 100 - props.winRate]);
 
 const categories = computed<Record<string, BulletLegendItemInterface>>(() => ({
 	winRate: {
 		name: "Average win rate",
-		color: colorValues[props.color],
+		color: MTG_COLOR_DETAILS[props.color].chartColor,
 	},
 	remaining: {
 		name: "Remaining",
