@@ -22,7 +22,7 @@ defineProps<{
 				:key="insight.color"
 				:color="insight.color"
 				:name="insight.name"
-				:deck-count="insight.deckCount"
+				:games-played="insight.totalGamesPlayed"
 				:win-rate="insight.averageWinRate"
 			/>
 		</UPageGrid>

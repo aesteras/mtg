@@ -11,8 +11,14 @@ const getDeckWinRate = (deck: DeckData): number =>
 export function buildColorInsights(decks: readonly DeckData[]): ColorInsight[] {
 	return MTG_COLORS.map((color) => {
 		const decksWithColor = decks.filter((deck) => deck.colors.includes(color));
+
 		const totalWinRate = decksWithColor.reduce(
 			(sum, deck) => sum + getDeckWinRate(deck),
+			0
+		);
+
+		const totalGamesPlayed = decksWithColor.reduce(
+			(sum, deck) => sum + deck.totalPlayed,
 			0
 		);
 
@@ -20,6 +26,7 @@ export function buildColorInsights(decks: readonly DeckData[]): ColorInsight[] {
 			color,
 			name: MTG_COLOR_DETAILS[color].name,
 			deckCount: decksWithColor.length,
+			totalGamesPlayed,
 			averageWinRate:
 				decksWithColor.length === 0 ? 0 : totalWinRate / decksWithColor.length,
 		};

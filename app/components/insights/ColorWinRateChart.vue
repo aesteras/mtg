@@ -5,7 +5,7 @@ import { MTG_COLOR_DETAILS, type MtgColor } from "~~/types/colorInsights";
 const props = defineProps<{
 	color: MtgColor;
 	name: string;
-	deckCount: number;
+	gamesPlayed: number;
 	winRate: number;
 }>();
 
@@ -47,7 +47,7 @@ const formattedWinRate = computed(() => `${Math.round(props.winRate)}%`);
 		</div>
 
 		<p class="mt-3 text-center text-sm text-muted">
-			{{ deckCount }} deck{{ deckCount === 1 ? "" : "s" }} included
+			{{ gamesPlayed }} game{{ gamesPlayed === 1 ? "" : "s" }} played
 		</p>
 	</UPageCard>
 </template>

@@ -35,4 +35,5 @@ export type ColorInsight = {
 	name: string;
 	deckCount: number;
 	averageWinRate: number;
+	totalGamesPlayed: number;
 };
