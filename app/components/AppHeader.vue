@@ -5,6 +5,7 @@
 			<h1>Deck Tracker</h1>
 		</template>
 		<template #right>
+			<UButton to="/insights" variant="ghost" label="Insights" />
 			<UColorModeButton style="cursor: pointer" />
 		</template>
 	</UHeader>
