@@ -4,13 +4,6 @@ import type { DeckData } from "~~/types/deckData";
 const { data } = defineProps<{
 	data: DeckData;
 }>();
-
-const wonStyle = {
-	width: data.wonPercentage + "%",
-};
-const lostStyle = {
-	width: data.lostPercentage + "%;",
-};
 </script>
 
 <template>
@@ -24,12 +17,12 @@ const lostStyle = {
 			<div
 				v-if="data.totalPlayed > 0"
 				class="h-full bg-success"
-				:style="wonStyle"
+				:style="{ width: `${data.wonPercentage}%` }"
 			/>
 			<div
 				v-if="data.totalPlayed > 0"
 				class="h-full bg-error"
-				:style="lostStyle"
+				:style="{ width: `${data.lostPercentage}%` }"
 			/>
 			<div v-else class="h-full w-full bg-gray-500" />
 		</div>
