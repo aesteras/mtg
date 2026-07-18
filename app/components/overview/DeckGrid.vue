@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { DeckData } from "~~/types/deckData";
 import DeckCard from "~/components/overview/DeckCard.vue";
+import { useDecksData } from "~/composables/useDecksData";
 
 const decksData = await useDecksData();
 
