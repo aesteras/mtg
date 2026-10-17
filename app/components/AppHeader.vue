@@ -1,3 +1,10 @@
+<script setup lang="ts">
+const navigation = [
+	{ label: "History", to: "/history" },
+	{ label: "Insights", to: "/insights" },
+] as const;
+</script>
+
 <template>
 	<UHeader>
 		<template #title>
@@ -5,9 +12,25 @@
 			<h1>Deck Tracker</h1>
 		</template>
 		<template #right>
-			<UButton to="/history" variant="ghost" label="History" />
-			<UButton to="/insights" variant="ghost" label="Insights" />
+			<UButton
+				v-for="item in navigation"
+				:key="item.to"
+				v-bind="item"
+				variant="ghost"
+				class="hidden lg:inline-flex"
+			/>
 			<UColorModeButton style="cursor: pointer" />
+		</template>
+		<template #body>
+			<nav class="flex flex-col gap-2" aria-label="Primary navigation">
+				<UButton
+					v-for="item in navigation"
+					:key="item.to"
+					v-bind="item"
+					variant="ghost"
+					class="w-full justify-start"
+				/>
+			</nav>
 		</template>
 	</UHeader>
 </template>
