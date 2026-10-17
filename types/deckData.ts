@@ -16,3 +16,12 @@ export type DeckData = DeckInfo & {
 	wonPercentage: number;
 	lostPercentage: number;
 };
+
+export type GameHistoryEntry = Pick<
+	DeckData,
+	"archidektId" | "deckName" | "image"
+> &
+	DeckResultSummary & {
+		entryId: string;
+		totalGames: number;
+	};
