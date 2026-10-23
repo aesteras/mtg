@@ -15,18 +15,24 @@ const props = defineProps<{
 	insights: readonly ColorInsight[];
 }>();
 
-const sortedInsights = computed(() => orderColorInsightsByGamesPlayed(props.insights));
+const sortedInsights = computed(() =>
+	[...orderColorInsightsByGamesPlayed(props.insights)].reverse()
+);
 
 const yFormatter = (tick: number): string =>
 	sortedInsights.value[tick]?.name ?? "";
 
 const xFormatter = (value: number | Date): string => String(value);
 
-const xNumTicks = computed(() =>
-	Math.max(...sortedInsights.value.map((insight) => insight.totalGamesPlayed)) / 2
-);
+const xNumTicks = computed(() => {
+	const maxGamesPlayed = Math.max(
+		...sortedInsights.value.map((insight) => insight.totalGamesPlayed)
+	);
 
-const getY = (_insight: ColorInsight, index: number): number => index;
+	return Math.max(1, Math.min(maxGamesPlayed, 6));
+});
+
+const getX = (_insight: ColorInsight, index: number): number => index;
 
 const getGamesPlayed = (insight: ColorInsight): number =>
 	insight.totalGamesPlayed;
@@ -47,8 +53,8 @@ const tooltipTriggers = {
 	<VisXYContainer :data="sortedInsights" :height="300">
 		<VisTooltip :triggers="tooltipTriggers" />
 		<VisGroupedBar
-			:x="getGamesPlayed"
-			:y="getY"
+			:x="getX"
+			:y="getGamesPlayed"
 			:color="getColor"
 			:orientation="Orientation.Horizontal"
 			:rounded-corners="2"
