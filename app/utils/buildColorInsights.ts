@@ -32,3 +32,13 @@ export function buildColorInsights(decks: readonly DeckData[]): ColorInsight[] {
 		};
 	});
 }
+
+export function orderColorInsightsByGamesPlayed(
+	insights: readonly ColorInsight[]
+): ColorInsight[] {
+	return [...insights].sort(
+		(left, right) =>
+			right.totalGamesPlayed - left.totalGamesPlayed ||
+			MTG_COLORS.indexOf(left.color) - MTG_COLORS.indexOf(right.color)
+	);
+}
