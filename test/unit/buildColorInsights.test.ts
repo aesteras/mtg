@@ -3,7 +3,7 @@ import type { DeckData } from "~~/types/deckData";
 import {
 	buildColorInsights,
 	orderColorInsightsByGamesPlayed,
-} from "./buildColorInsights";
+} from "~/utils/buildColorInsights";
 
 const buildDeck = (colors: DeckData["colors"], totalPlayed: number): DeckData =>
 	({

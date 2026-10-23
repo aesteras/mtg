@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { Temporal } from "temporal-polyfill";
 import type { DeckData } from "~~/types/deckData";
-import { buildGeneralInsights } from "./buildGeneralInsights";
+import { buildGeneralInsights } from "~/utils/buildGeneralInsights";
 
 const buildDeck = (
 	totalWins: number,
