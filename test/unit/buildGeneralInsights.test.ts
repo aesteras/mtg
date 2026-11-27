@@ -7,24 +7,23 @@ const buildDeck = (
 	totalWins: number,
 	totalLosses: number,
 	dates: string[]
-): DeckData =>
-	({
-		id: "test-deck",
-		archidektId: 1,
-		deckName: "Test deck",
-		image: "test.jpg",
-		colors: "w",
-		totalWins,
-		totalLosses,
-		totalPlayed: totalWins + totalLosses,
-		wonPercentage: 0,
-		lostPercentage: 0,
-		results: dates.map((date) => ({
-			date: Temporal.PlainDate.from(date),
-			wins: 0,
-			losses: 0,
-		})),
-	});
+): DeckData => ({
+	id: "test-deck",
+	archidektId: 1,
+	deckName: "Test deck",
+	image: "test.jpg",
+	colors: "w",
+	totalWins,
+	totalLosses,
+	totalPlayed: totalWins + totalLosses,
+	wonPercentage: 0,
+	lostPercentage: 0,
+	results: dates.map((date) => ({
+		date: Temporal.PlainDate.from(date),
+		wins: 0,
+		losses: 0,
+	})),
+});
 
 describe("buildGeneralInsights", () => {
 	it("returns zero-safe metrics for an empty collection", () => {

@@ -6,9 +6,7 @@ import {
 	VisTooltip,
 	VisXYContainer,
 } from "@unovis/vue";
-import {
-	orderColorInsightsByGamesPlayed,
-} from "~/utils/buildColorInsights";
+import { orderColorInsightsByGamesPlayed } from "~/utils/buildColorInsights";
 import { MTG_COLOR_DETAILS, type ColorInsight } from "~~/types/colorInsights";
 
 const props = defineProps<{

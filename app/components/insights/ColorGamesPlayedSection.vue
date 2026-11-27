@@ -11,9 +11,7 @@ defineProps<{
 	<section>
 		<UPageHeader class="border-0">
 			<h2 class="text-xl font-semibold">Games played by color</h2>
-			<p class="text-muted">
-				Games played with decks that include each color.
-			</p>
+			<p class="text-muted">Games played with decks that include each color.</p>
 		</UPageHeader>
 
 		<ColorGamesPlayedChart :insights="insights" />

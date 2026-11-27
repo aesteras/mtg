@@ -5,20 +5,22 @@ import {
 	orderColorInsightsByGamesPlayed,
 } from "~/utils/buildColorInsights";
 
-const buildDeck = (colors: DeckData["colors"], totalPlayed: number): DeckData =>
-	({
-		id: "test-deck",
-		archidektId: 1,
-		deckName: "Test deck",
-		image: "test.jpg",
-		colors,
-		totalPlayed,
-		totalWins: 0,
-		totalLosses: totalPlayed,
-		results: [],
-		wonPercentage: 0,
-		lostPercentage: 0,
-	});
+const buildDeck = (
+	colors: DeckData["colors"],
+	totalPlayed: number
+): DeckData => ({
+	id: "test-deck",
+	archidektId: 1,
+	deckName: "Test deck",
+	image: "test.jpg",
+	colors,
+	totalPlayed,
+	totalWins: 0,
+	totalLosses: totalPlayed,
+	results: [],
+	wonPercentage: 0,
+	lostPercentage: 0,
+});
 
 describe("buildColorInsights", () => {
 	it("counts a multicolor deck's games for every included color", () => {
@@ -27,15 +29,15 @@ describe("buildColorInsights", () => {
 			buildDeck("u", 2),
 		]);
 
-		expect(insights.find((insight) => insight.color === "w")?.totalGamesPlayed).toBe(
-			4
-		);
-		expect(insights.find((insight) => insight.color === "u")?.totalGamesPlayed).toBe(
-			6
-		);
-		expect(insights.find((insight) => insight.color === "b")?.totalGamesPlayed).toBe(
-			0
-		);
+		expect(
+			insights.find((insight) => insight.color === "w")?.totalGamesPlayed
+		).toBe(4);
+		expect(
+			insights.find((insight) => insight.color === "u")?.totalGamesPlayed
+		).toBe(6);
+		expect(
+			insights.find((insight) => insight.color === "b")?.totalGamesPlayed
+		).toBe(0);
 	});
 
 	it("orders descending by games played and uses WUBRG to break ties", () => {

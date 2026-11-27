@@ -39,6 +39,7 @@ export function buildGeneralInsights(
 	return {
 		totalGamesPlayed,
 		averageGamesPerWeek: totalGamesPlayed / weekSpan,
-		overallWinRate: totalGamesPlayed === 0 ? 0 : (totalWins / totalGamesPlayed) * 100,
+		overallWinRate:
+			totalGamesPlayed === 0 ? 0 : (totalWins / totalGamesPlayed) * 100,
 	};
 }
