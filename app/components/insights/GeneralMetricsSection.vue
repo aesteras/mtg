@@ -28,6 +28,8 @@ const formattedOverallWinRate = computed(
 			<UPageCard title="Average games per week" variant="subtle">
 				<p class="text-3xl font-semibold">{{ formattedAverageGamesPerWeek }}</p>
 			</UPageCard>
+			<!-- TODO: add average number of players -->
+			<!-- TODO: normalize win-rate-->
 			<UPageCard title="Overall win ratio" variant="subtle">
 				<p class="text-3xl font-semibold">{{ formattedOverallWinRate }}</p>
 			</UPageCard>

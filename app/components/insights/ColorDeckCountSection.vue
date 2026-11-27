@@ -10,7 +10,7 @@ defineProps<{
 <template>
 	<section>
 		<UPageHeader class="border-0">
-			<h2 class="text-xl font-semibold">Decks by color</h2>
+			<h2 class="text-xl font-semibold">Decks owned by color</h2>
 			<p class="text-muted">Number of decks that include each color.</p>
 		</UPageHeader>
 
